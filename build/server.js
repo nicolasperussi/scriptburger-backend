@@ -15,7 +15,7 @@ mongoose_1.default
 })
     .then(function (con) { return console.log("Database connection successfully!"); })
     .catch(console.log);
-var PORT = 3333;
+var PORT = process.env.PORT || 3333;
 app_1.default.listen(PORT, function () {
     console.log("Server running on port ".concat(PORT, "..."));
 });
