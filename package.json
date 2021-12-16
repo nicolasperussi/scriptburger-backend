@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "start": "node dist/server.js",
-    "build": "tsc",
-    "heroku-postbuild": "echo Skip build on Heroku"
+    "build": "tsc"
   },
   "author": "nicolasperussi",
   "license": "MIT",
