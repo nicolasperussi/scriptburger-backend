@@ -9,6 +9,13 @@ export const createValidator = [
     .optional()
     .isString()
     .withMessage("The description of the dish must be a string"),
+  body("type")
+    .isString()
+    .withMessage("The type of the dish must be a string")
+    .isIn(["sandwich", "dessert", "drink", "sidedish"])
+    .withMessage(
+      "The type of the dish must be a sandwich, dessert, drink or sidedish"
+    ),
 ];
 
 export const updateValidator = [

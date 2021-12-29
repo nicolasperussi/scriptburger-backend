@@ -15,6 +15,10 @@ const dishSchema = new mongoose.Schema(
     description: {
       type: "string",
     },
+    type: {
+      type: "string",
+      required: true,
+    }
   },
   { versionKey: false }
 );
