@@ -1,4 +1,5 @@
 import express from "express";
+import fileUpload from "express-fileupload";
 import cors from "cors";
 import dishRouter from "./routes/dishRoutes";
 import orderRouter from "./routes/orderRoutes";
@@ -6,6 +7,7 @@ import userRouter from "./routes/userRoutes";
 
 const app = express();
 
+app.use(fileUpload());
 app.use(express.json());
 app.use(cors());
 

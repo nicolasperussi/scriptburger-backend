@@ -18,6 +18,10 @@ const dishSchema = new mongoose.Schema(
     type: {
       type: "string",
       required: true,
+    },
+    image: {
+      type: "Buffer",
+      required: true,
     }
   },
   { versionKey: false }

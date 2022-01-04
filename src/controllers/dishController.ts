@@ -28,10 +28,16 @@ export const createDish = async (
   res: Response
 ): Promise<Response> => {
   try {
+    console.log(req);
+    
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ error: errors.array() });
     }
+    
+
+    // @ts-ignore
+    req.body.image = req.files!.image.data;
 
     const newDish = await Dish.create(req.body);
 
@@ -47,7 +53,10 @@ export const createDish = async (
   }
 };
 
-export const getDish = async (req: Request, res: Response): Promise<Response> => {
+export const getDish = async (
+  req: Request,
+  res: Response
+): Promise<Response> => {
   try {
     const dish = await Dish.findById(req.params.id);
 
