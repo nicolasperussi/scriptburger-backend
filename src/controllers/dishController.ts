@@ -27,9 +27,7 @@ export const createDish = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  try {
-    console.log(req);
-    
+  try {    
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ error: errors.array() });
